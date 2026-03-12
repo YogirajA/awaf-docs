@@ -302,6 +302,8 @@
         <p class="text-text-secondary max-w-xl mx-auto">
           A complete architectural model for agent systems, from foundational requirements to
           agent-native concerns that have no cloud equivalent.
+          <a href="https://aradhye.com/ai-agents-well-architected-framework/" target="_blank" rel="noopener"
+             class="text-accent hover:opacity-70 transition-opacity whitespace-nowrap">Read the intro post &rarr;</a>
         </p>
       </div>
 
@@ -371,7 +373,7 @@
               <h3 class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Reliability</h3>
             </div>
             <p class="text-text-secondary text-sm leading-relaxed">
-              Designed for failure, not just uptime. Fail-loud behavior and circuit breakers at the MCP layer.
+              Designed for failure, not just uptime. Chain boundaries as fault domains. Fail-loud behavior and circuit breakers at the MCP layer. Checkpoint/resume for multi-step runs.
             </p>
           </div>
 
@@ -391,7 +393,7 @@
               <h3 class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Cost Optimization</h3>
             </div>
             <p class="text-text-secondary text-sm leading-relaxed">
-              Tracks every token and tool call. Hard stop at 100% budget. Non-negotiable.
+              Tracks every token and tool call. Session budgets and loop detection from day one. Hard stop at 100% budget. Non-negotiable. Prevents solutions that cost more than the problems they solve.
             </p>
           </div>
 
@@ -426,7 +428,7 @@
               <h3 class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Reasoning Integrity</h3>
             </div>
             <p class="text-text-secondary text-sm leading-relaxed">
-              Addresses silent, confident failures. Requires evals covering tool selection, argument accuracy, and chain-of-thought faithfulness.
+              Addresses silent, confident failures — the worst failure type. Agents can hallucinate arguments, select wrong tools, or derail without visible errors. Requires evals covering tool selection, argument accuracy, and chain-of-thought faithfulness.
             </p>
           </div>
 
@@ -436,7 +438,7 @@
               <h3 class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Controllability</h3>
             </div>
             <p class="text-text-secondary text-sm leading-relaxed">
-              Human control through code-level enforcement, not prompts. Any in-flight agent must be externally stoppable.
+              Human control through code-level enforcement, not prompts. Any in-flight agent must be externally stoppable. Requires pause, notify, and resume/abort primitives.
             </p>
           </div>
 
@@ -446,7 +448,7 @@
               <h3 class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Context Integrity</h3>
             </div>
             <p class="text-text-secondary text-sm leading-relaxed">
-              Prevents stale context from corrupting reasoning. The agent must understand its own knowledge limitations.
+              Manages agent perception of reality. Prevents stale context from corrupting reasoning. Requires external content sanitization through MCP and active lifecycle management for long sessions. The agent must understand its own knowledge limitations.
             </p>
           </div>
 
