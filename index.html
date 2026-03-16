@@ -291,6 +291,93 @@
     </div>
   </section>
 
+  <!-- ─── TERMINAL DEMO ─── -->
+  <section class="py-20 border-t border-border-subtle">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="mb-10 text-center">
+        <p class="section-label text-text-tertiary mb-3">awaf run</p>
+        <h2 class="headline text-3xl md:text-4xl text-text-primary mb-3" style="font-size: clamp(1.75rem, 4vw, 2.5rem);">
+          One command. Ten scores.
+        </h2>
+        <p class="text-text-secondary max-w-xl mx-auto">
+          Point awaf at your repo. It reads your code and returns a structured assessment across all 10 pillars — findings ordered by severity, recommendations included.
+        </p>
+      </div>
+
+      <div class="rounded-lg overflow-hidden border border-border" style="background: #0d1117;">
+        <!-- terminal chrome -->
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-border" style="background: #161b22;">
+          <span class="w-3 h-3 rounded-full" style="background: #ff5f57;"></span>
+          <span class="w-3 h-3 rounded-full" style="background: #febc2e;"></span>
+          <span class="w-3 h-3 rounded-full" style="background: #28c840;"></span>
+          <span class="ml-3 font-mono text-xs text-text-tertiary">~ awaf run --provider openai --model gpt-4o</span>
+        </div>
+        <!-- output -->
+        <pre class="p-6 overflow-x-auto text-xs leading-relaxed" style="font-family: 'JetBrains Mono', monospace; color: #8b949e;"><span style="color:#2dd4bf;">   _      _  _  _    _      ___
+  /_\    | || || |  /_\    | __|
+ / _ \   | \/ \/ | / _ \   | _|
+/_/ \_\   \_/\_/  /_/ \_\  |_</span>       <span style="color:#484f58;">Agent Well-Architected Framework</span>
+
+<span style="color:#f0f6fc;">AWAF Assessment: my-agent</span>
+<span style="color:#484f58;">AWAF v1.0  |  2026-03-15  |  openai / gpt-4o</span>
+<span style="color:#30363d;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  <span style="color:#f0f6fc;">Overall Score</span>    <span style="color:#2dd4bf;">78/100</span>   <span style="color:#38bdf8;">Near Ready</span>
+  <span style="color:#484f58;">Close to production. Address findings before deploying.</span>
+
+  <span style="color:#484f58;">Scale: Production Ready >=90 · Near Ready >=75 · Needs Work >=50
+         High Risk >=25 · Not Ready &lt;25
+  Foundation &lt;40 = automatic FAIL regardless of overall score.
+  Tier 2 pillars (Reasoning, Controllability, Context Integrity) carry 1.5x weight.</span>
+
+<span style="color:#30363d;">┌──────────────────────┬───────┬──────────────┬────────────┬─────────┐</span>
+<span style="color:#30363d;">│</span> <span style="color:#484f58;">Pillar               </span><span style="color:#30363d;">│</span> <span style="color:#484f58;">Score </span><span style="color:#30363d;">│</span> <span style="color:#484f58;">Progress     </span><span style="color:#30363d;">│</span> <span style="color:#484f58;">Confidence  </span><span style="color:#30363d;">│</span>  <span style="color:#484f58;">Status </span><span style="color:#30363d;">│</span>
+<span style="color:#30363d;">╞══════════════════════╪═══════╪══════════════╪════════════╪═════════╡</span>
+<span style="color:#30363d;">│</span> <span style="color:#484f58;">TIER 0 -- FOUNDATION                                               </span><span style="color:#30363d;">│</span>
+<span style="color:#30363d;">├──────────────────────┼───────┼──────────────┼────────────┼─────────┤</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Foundation           </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">85</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">[########  ]</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">verified   </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">PASS </span><span style="color:#30363d;">│</span>
+<span style="color:#30363d;">╞══════════════════════╪═══════╪══════════════╪════════════╪═════════╡</span>
+<span style="color:#30363d;">│</span> <span style="color:#484f58;">TIER 1 -- CLOUD WAF ADAPTED                                        </span><span style="color:#30363d;">│</span>
+<span style="color:#30363d;">├──────────────────────┼───────┼──────────────┼────────────┼─────────┤</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Op. Excellence       </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">74</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">[#######   ]</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">verified   </span><span style="color:#30363d;">│</span>         <span style="color:#30363d;">│</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Security             </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">82</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">[########  ]</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">verified   </span><span style="color:#30363d;">│</span>         <span style="color:#30363d;">│</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Reliability          </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">71</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">[#######   ]</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">verified   </span><span style="color:#30363d;">│</span>         <span style="color:#30363d;">│</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Performance          </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">80</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">[########  ]</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">verified   </span><span style="color:#30363d;">│</span>         <span style="color:#30363d;">│</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Cost Optim.          </span><span style="color:#30363d;">│</span>    <span style="color:#f59e0b;">65</span> <span style="color:#30363d;">│</span> <span style="color:#f59e0b;">[######    ]</span> <span style="color:#30363d;">│</span> <span style="color:#484f58;">partial    </span><span style="color:#30363d;">│</span>         <span style="color:#30363d;">│</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Sustainability       </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">79</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">[########  ]</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">verified   </span><span style="color:#30363d;">│</span>         <span style="color:#30363d;">│</span>
+<span style="color:#30363d;">╞══════════════════════╪═══════╪══════════════╪════════════╪═════════╡</span>
+<span style="color:#30363d;">│</span> <span style="color:#484f58;">TIER 2 -- AGENT-NATIVE  (1.5x weight)                              </span><span style="color:#30363d;">│</span>
+<span style="color:#30363d;">├──────────────────────┼───────┼──────────────┼────────────┼─────────┤</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Reasoning Integ.     </span><span style="color:#30363d;">│</span>    <span style="color:#f59e0b;">71</span> <span style="color:#30363d;">│</span> <span style="color:#f59e0b;">[#######   ]</span> <span style="color:#30363d;">│</span> <span style="color:#484f58;">partial    </span><span style="color:#30363d;">│</span>    <span style="color:#f59e0b;">1.5x </span><span style="color:#30363d;">│</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Controllability      </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">78</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">[########  ]</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">verified   </span><span style="color:#30363d;">│</span>    <span style="color:#f59e0b;">1.5x </span><span style="color:#30363d;">│</span>
+<span style="color:#30363d;">│</span> <span style="color:#f0f6fc;">Context Integrity    </span><span style="color:#30363d;">│</span>    <span style="color:#2dd4bf;">80</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">[########  ]</span> <span style="color:#30363d;">│</span> <span style="color:#2dd4bf;">verified   </span><span style="color:#30363d;">│</span>    <span style="color:#f59e0b;">1.5x </span><span style="color:#30363d;">│</span>
+<span style="color:#30363d;">└──────────────────────┴───────┴──────────────┴────────────┴─────────┘</span>
+
+  <span style="color:#484f58;">FILES ANALYZED     12 files</span>
+<span style="color:#30363d;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  <span style="color:#f0f6fc;">FINDINGS</span>  <span style="color:#484f58;">(ordered by severity)</span>
+  <span style="color:#ef4444;">[High     ]</span>  <span style="color:#f0f6fc;">Cost Optim.        </span>  <span style="color:#8b949e;">No session budget cap; runaway token spend possible</span>
+  <span style="color:#f59e0b;">[Medium   ]</span>  <span style="color:#f0f6fc;">Reasoning Integ.   </span>  <span style="color:#8b949e;">Evals present but hallucination rate not measured</span>
+<span style="color:#30363d;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  <span style="color:#f0f6fc;">RECOMMENDATIONS</span>
+  <span style="color:#f0f6fc;">Cost Optim.</span>         <span style="color:#8b949e;">Add AWAF_SESSION_BUDGET_USD env var and wire hard stop in
+                      agent loop before tool dispatch</span>
+  <span style="color:#f0f6fc;">Reasoning Integ.</span>    <span style="color:#8b949e;">Instrument LangSmith eval run to capture hallucination rate
+                      alongside tool selection accuracy</span>
+<span style="color:#30363d;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+  <span style="color:#484f58;">TO IMPROVE THIS ASSESSMENT</span>
+  <span style="color:#8b949e;">Share LangSmith or Braintrust eval output to upgrade Reasoning Integ.
+  from partial to verified
+  Share token usage dashboard or budget alert config to verify Cost Optim.</span>
+<span style="color:#30363d;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span></pre>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ─── PILLARS ─── -->
   <section class="py-20 border-t border-border-subtle">
     <div class="max-w-6xl mx-auto px-6">
@@ -458,6 +545,181 @@
     </div>
   </section>
 
+  <!-- ─── GOOD VS BAD ─── -->
+  <section class="py-20 border-t border-border-subtle">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="mb-14 text-center">
+        <p class="section-label text-text-tertiary mb-3">What AWAF looks for</p>
+        <h2 class="headline text-3xl md:text-4xl text-text-primary mb-3" style="font-size: clamp(1.75rem, 4vw, 2.5rem);">
+          Bad agent. Good agent.
+        </h2>
+        <p class="text-text-secondary max-w-xl mx-auto">
+          These are the patterns awaf verifies in your code. The difference between a production-ready agent and a liability is usually one of these.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-8">
+
+        <!-- Controllability -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background: #f59e0b;"></span>
+            <span class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Controllability</span>
+            <span class="badge border ml-1" style="border-color: rgba(245,158,11,0.45); color: #f59e0b; background: rgba(245,158,11,0.08);">Tier 2 · 1.5×</span>
+            <div class="flex-1 h-px bg-border-subtle"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="rounded-lg overflow-hidden border" style="border-color: rgba(239,68,68,0.25);">
+              <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2);">
+                <svg class="w-3.5 h-3.5 text-red-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M3 3l10 10M13 3L3 13"/></svg>
+                <span class="font-mono text-xs text-red-400">bad — control in the prompt</span>
+              </div>
+              <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#484f58;"># system prompt</span>
+<span style="color:#f59e0b;">"""
+You are a helpful agent. If the user says
+'stop', please stop what you are doing.
+Never take irreversible actions unless asked.
+"""</span>
+
+<span style="color:#484f58;"># no kill switch, no cancel primitive,</span>
+<span style="color:#484f58;"># no external signal handler — agent</span>
+<span style="color:#484f58;"># cannot be stopped from outside</span>
+<span style="color:#ef4444;">result = agent.run_forever(task)</span></pre>
+            </div>
+            <div class="rounded-lg overflow-hidden border" style="border-color: rgba(45,212,191,0.25);">
+              <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(45,212,191,0.07); border-color: rgba(45,212,191,0.2);">
+                <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><polyline stroke-linecap="round" stroke-linejoin="round" points="2,8 6,12 14,4"/></svg>
+                <span class="font-mono text-xs text-emerald-400">good — code-level enforcement</span>
+              </div>
+              <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#484f58;"># checked before every tool dispatch</span>
+<span style="color:#f0f6fc;">async def dispatch_tool</span>(tool, args, ctx):
+    <span style="color:#2dd4bf;">await kill_switch.check(ctx.run_id)</span>  <span style="color:#484f58;"># raises if flagged</span>
+    <span style="color:#2dd4bf;">await pause_gate.wait(ctx.run_id)</span>   <span style="color:#484f58;"># blocks if paused</span>
+    <span style="color:#f0f6fc;">return await tool.call</span>(args)
+
+<span style="color:#484f58;"># operator can stop or pause any in-flight run</span>
+<span style="color:#484f58;"># via API — no prompt required</span>
+<span style="color:#2dd4bf;">kill_switch.flag(run_id="abc123")</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+            <span class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Security</span>
+            <span class="badge border ml-1 text-accent" style="border-color: rgba(45,212,191,0.4); background: rgba(45,212,191,0.07);">Tier 1 · 1.0×</span>
+            <div class="flex-1 h-px bg-border-subtle"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="rounded-lg overflow-hidden border" style="border-color: rgba(239,68,68,0.25);">
+              <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2);">
+                <svg class="w-3.5 h-3.5 text-red-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M3 3l10 10M13 3L3 13"/></svg>
+                <span class="font-mono text-xs text-red-400">bad — credentials in context</span>
+              </div>
+              <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#484f58;"># credentials passed into the agent's context</span>
+<span style="color:#ef4444;">agent = Agent(
+    system=f"Use API key {api_key} to call...",
+    tools=[slack_tool, github_tool, db_tool],
+    <span style="color:#484f58;"># no scope limits — agent can call anything</span>
+)</span></pre>
+            </div>
+            <div class="rounded-lg overflow-hidden border" style="border-color: rgba(45,212,191,0.25);">
+              <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(45,212,191,0.07); border-color: rgba(45,212,191,0.2);">
+                <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><polyline stroke-linecap="round" stroke-linejoin="round" points="2,8 6,12 14,4"/></svg>
+                <span class="font-mono text-xs text-emerald-400">good — credentials never reach the model</span>
+              </div>
+              <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#484f58;"># tool injects credentials at call time; model never sees them</span>
+<span style="color:#f0f6fc;">class SlackTool</span>(MCPTool):
+    <span style="color:#f0f6fc;">def call</span>(self, channel, message):
+        <span style="color:#484f58;"># key read from env inside the tool, not from agent context</span>
+        <span style="color:#2dd4bf;">token = os.environ["SLACK_BOT_TOKEN"]</span>
+        <span style="color:#484f58;"># scope is read-only by default; write requires explicit grant</span>
+        <span style="color:#2dd4bf;">return slack_client.post(token, channel, message)</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cost Optimization -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></span>
+            <span class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Cost Optimization</span>
+            <span class="badge border ml-1 text-accent" style="border-color: rgba(45,212,191,0.4); background: rgba(45,212,191,0.07);">Tier 1 · 1.0×</span>
+            <div class="flex-1 h-px bg-border-subtle"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="rounded-lg overflow-hidden border" style="border-color: rgba(239,68,68,0.25);">
+              <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2);">
+                <svg class="w-3.5 h-3.5 text-red-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M3 3l10 10M13 3L3 13"/></svg>
+                <span class="font-mono text-xs text-red-400">bad — unbounded token spend</span>
+              </div>
+              <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#ef4444;">while not task.complete():
+    response = llm.call(context)
+    context.append(response)
+    <span style="color:#484f58;"># no loop detection, no budget cap</span>
+    <span style="color:#484f58;"># a stuck task can spend $100s unchecked</span></span></pre>
+            </div>
+            <div class="rounded-lg overflow-hidden border" style="border-color: rgba(45,212,191,0.25);">
+              <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(45,212,191,0.07); border-color: rgba(45,212,191,0.2);">
+                <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><polyline stroke-linecap="round" stroke-linejoin="round" points="2,8 6,12 14,4"/></svg>
+                <span class="font-mono text-xs text-emerald-400">good — hard stop before tool dispatch</span>
+              </div>
+              <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#f0f6fc;">budget</span> = SessionBudget(limit_usd=<span style="color:#2dd4bf;">float(os.environ["AWAF_SESSION_BUDGET_USD"])</span>)
+
+<span style="color:#f0f6fc;">while not task.complete():</span>
+    <span style="color:#2dd4bf;">budget.check()        # raises BudgetExceededError if over limit</span>
+    <span style="color:#2dd4bf;">loop_guard.check()    # raises LoopDetectedError if repeating</span>
+    response = llm.call(context)
+    budget.record(response.usage)
+    context.append(response)</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reasoning Integrity -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full shrink-0" style="background: #f59e0b;"></span>
+            <span class="text-text-primary text-sm font-semibold" style="font-family: Geist, sans-serif;">Reasoning Integrity</span>
+            <span class="badge border ml-1" style="border-color: rgba(245,158,11,0.45); color: #f59e0b; background: rgba(245,158,11,0.08);">Tier 2 · 1.5×</span>
+            <div class="flex-1 h-px bg-border-subtle"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="rounded-lg overflow-hidden border" style="border-color: rgba(239,68,68,0.25);">
+              <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2);">
+                <svg class="w-3.5 h-3.5 text-red-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M3 3l10 10M13 3L3 13"/></svg>
+                <span class="font-mono text-xs text-red-400">bad — no evals for tool selection</span>
+              </div>
+              <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#484f58;"># tested manually a few times and it seemed fine</span>
+<span style="color:#484f58;"># agent has 12 tools; no automated evals exist</span>
+<span style="color:#484f58;"># hallucination rate is unknown</span>
+<span style="color:#484f58;"># no tracking of which tool was selected vs expected</span>
+<span style="color:#ef4444;">agent.deploy()</span></pre>
+            </div>
+            <div class="rounded-lg overflow-hidden border" style="border-color: rgba(45,212,191,0.25);">
+              <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(45,212,191,0.07); border-color: rgba(45,212,191,0.2);">
+                <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><polyline stroke-linecap="round" stroke-linejoin="round" points="2,8 6,12 14,4"/></svg>
+                <span class="font-mono text-xs text-emerald-400">good — evals with measurable pass rate</span>
+              </div>
+              <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#484f58;"># eval suite run in CI — fails if hallucination rate &gt; 3%</span>
+<span style="color:#2dd4bf;">suite = EvalSuite.load("evals/tool_selection.yaml")</span>
+results = suite.run(agent)
+
+assert results.tool_accuracy &gt;= <span style="color:#2dd4bf;">0.95</span>, \
+    f<span style="color:#f59e0b;">"Tool selection accuracy {results.tool_accuracy:.0%} below threshold"</span>
+assert results.hallucination_rate &lt;= <span style="color:#2dd4bf;">0.03</span>, \
+    f<span style="color:#f59e0b;">"Hallucination rate {results.hallucination_rate:.1%} exceeds 3%"</span></pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ─── ECOSYSTEM ─── -->
   <section class="py-20 border-t border-border-subtle">
     <div class="max-w-6xl mx-auto px-6">
@@ -489,7 +751,7 @@
           <div class="section-label text-text-tertiary mb-3">CLI</div>
           <div class="text-text-primary font-bold mb-2" style="font-family: Geist, sans-serif;">awaf-cli</div>
           <p class="text-text-secondary text-sm leading-relaxed">
-            Reference implementation. Static analysis, CI/CD integration, GitHub Action. pip install awaf.
+            Reference implementation. Multi-provider (Anthropic, OpenAI, Azure, Google, LiteLLM). CI/CD integration, GitHub Action. pip install awaf.
           </p>
           <div class="mt-auto pt-4 flex items-center gap-1 text-xs text-accent">
             <span>YogirajA/awaf-cli</span>
