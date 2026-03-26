@@ -378,6 +378,62 @@
     </div>
   </section>
 
+  <!-- ─── SCORE INTEGRITY ─── -->
+  <section class="py-20 border-t border-border-subtle">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="mb-10 text-center">
+        <p class="section-label text-text-tertiary mb-3">integrity checks</p>
+        <h2 class="headline text-3xl md:text-4xl text-text-primary mb-3" style="font-size: clamp(1.75rem, 4vw, 2.5rem);">
+          Honest scoring.
+        </h2>
+        <p class="text-text-secondary max-w-xl mx-auto">
+          awaf uses a mechanical risk tally — not holistic LLM estimation — so models cannot anchor on a comfortable number.
+          Two distinct suspect flags tell you exactly what to do next.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+
+        <!-- Anchoring / pathological score -->
+        <div class="rounded-lg overflow-hidden border" style="border-color: rgba(239,68,68,0.25);">
+          <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2);">
+            <svg class="w-3.5 h-3.5 text-red-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 2l.9 5.5h4.6L9.6 11l1.4 4.5L8 13 4.9 15.5 6.4 11 2.5 7.5h4.6z"/></svg>
+            <span class="font-mono text-xs text-red-400">anchoring detected — review tallies</span>
+          </div>
+          <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#f0f6fc;">SUSPECT RESULTS</span>  <span style="color:#484f58;">(included in score — flagged for review)</span>
+<span style="color:#ef4444;">!</span> <span style="color:#8b949e;">3 pillars returned score 42</span>
+  <span style="color:#ef4444;">possible model anchoring or guessing</span>
+  <span style="color:#8b949e;">Foundation     score 42 shared by 3 pillars (cluster pattern)
+  Security       score 42 shared by 3 pillars (cluster pattern)
+  Reliability    score 42 shared by 3 pillars (cluster pattern)</span></pre>
+        </div>
+
+        <!-- Score 100 — high variance, not anchoring -->
+        <div class="rounded-lg overflow-hidden border" style="border-color: rgba(45,212,191,0.25);">
+          <div class="px-4 py-2 flex items-center gap-2 border-b" style="background: rgba(45,212,191,0.07); border-color: rgba(45,212,191,0.2);">
+            <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path stroke-linecap="round" d="M8 5v3.5l2 1.5"/></svg>
+            <span class="font-mono text-xs text-emerald-400">score 100 — verify with multiple runs</span>
+          </div>
+          <pre class="p-4 text-xs leading-relaxed overflow-x-auto" style="font-family: 'JetBrains Mono', monospace; color: #8b949e; background: #0d1117;"><span style="color:#f0f6fc;">SUSPECT RESULTS</span>  <span style="color:#484f58;">(included in score — flagged for review)</span>
+<span style="color:#2dd4bf;">!</span> <span style="color:#8b949e;">3 pillars returned score 100</span>
+  <span style="color:#2dd4bf;">score 100 is difficult to achieve consistently;
+  confirm by averaging multiple runs and checking
+  std deviation before treating as reliable</span>
+  <span style="color:#8b949e;">Reliability    score 100 on 3 pillars — verify with multi-run average
+  Cost Optim.    score 100 on 3 pillars — verify with multi-run average
+  Sustainability score 100 on 3 pillars — verify with multi-run average</span></pre>
+        </div>
+
+      </div>
+
+      <p class="font-mono text-xs text-text-tertiary text-center">
+        Suspect pillars are included in the overall score. Suspect is a warning for operators, not a veto.
+      </p>
+
+    </div>
+  </section>
+
   <!-- ─── PILLARS ─── -->
   <section class="py-20 border-t border-border-subtle">
     <div class="max-w-6xl mx-auto px-6">
