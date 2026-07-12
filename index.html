@@ -247,7 +247,7 @@
       <div class="fu fu-1 mb-5">
         <span class="inline-flex items-center gap-2 text-xs text-text-secondary border border-border rounded-full px-3 py-1 font-mono">
           <span class="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
-          awaf v1.3 &nbsp;·&nbsp; Open Specification
+          awaf v1.4 &nbsp;·&nbsp; Open Specification
         </span>
       </div>
 
@@ -301,7 +301,7 @@
           One command. Ten scores.
         </h2>
         <p class="text-text-secondary max-w-xl mx-auto">
-          Point awaf at your repo. It reads your code and returns a structured assessment across all 10 pillars — findings ordered by severity, recommendations included.
+          Point awaf at your repo. It maps your architecture into a pillar-shaped graph, then returns a structured assessment across all 10 pillars: findings ordered by severity with file:line citations, recommendations included, as a text or self-contained HTML report.
         </p>
       </div>
 
@@ -320,7 +320,7 @@
 /_/ \_\   \_/\_/  /_/ \_\  |_</span>       <span style="color:#484f58;">Agent Well-Architected Framework</span>
 
 <span style="color:#f0f6fc;">AWAF Assessment: my-agent</span>
-<span style="color:#484f58;">AWAF v1.3  |  2026-03-29  |  openai / gpt-4o</span>
+<span style="color:#484f58;">AWAF v1.4  |  2026-07-12  |  openai / gpt-4o</span>
 <span style="color:#30363d;">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
   <span style="color:#f0f6fc;">Overall Score</span>    <span style="color:#2dd4bf;">78/100</span>   <span style="color:#38bdf8;">Near Ready</span>
   <span style="color:#484f58;">Close to production. Address findings before deploying.</span>
@@ -809,7 +809,7 @@ assert results.hallucination_rate &lt;= <span style="color:#2dd4bf;">0.03</span>
           <div class="section-label text-text-tertiary mb-3">CLI</div>
           <div class="text-text-primary font-bold mb-2" style="font-family: Geist, sans-serif;">awaf-cli</div>
           <p class="text-text-secondary text-sm leading-relaxed">
-            Reference implementation. Multi-provider (Anthropic, OpenAI, Azure, Google, LiteLLM). CI/CD integration, GitHub Action. pip install awaf.
+            Reference implementation. Multi-provider (Anthropic, OpenAI, Azure, Google, LiteLLM). Code-graph evidence with file:line findings, self-contained HTML reports, structured findings with cross-run lifecycle, multi-run averaging, and a nightly eval-the-grader. CI/CD integration, GitHub Action. pip install awaf.
           </p>
           <div class="mt-auto pt-4 flex items-center gap-1 text-xs text-accent">
             <span>YogirajA/awaf-cli</span>
@@ -823,7 +823,7 @@ assert results.hallucination_rate &lt;= <span style="color:#2dd4bf;">0.03</span>
           <div class="section-label text-text-tertiary mb-3">Claude Code Skill</div>
           <div class="text-text-primary font-bold mb-2" style="font-family: Geist, sans-serif;">awaf skill</div>
           <p class="text-text-secondary text-sm leading-relaxed">
-            Dialogue-driven assessments in Claude Code. Accepts code, docs, exports, or verbal descriptions.
+            Dialogue-driven assessments in Claude Code. Accepts code, docs, exports, or verbal descriptions. Now at par with the CLI: builds pillar-shaped graph evidence and writes a shareable HTML report.
           </p>
           <div class="mt-auto pt-4 flex items-center gap-1 text-xs text-accent">
             <span>YogirajA/awaf-skill</span>
@@ -882,7 +882,7 @@ assert results.hallucination_rate &lt;= <span style="color:#2dd4bf;">0.03</span>
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
       <span class="wordmark text-text-tertiary text-sm">awaf</span>
       <p class="font-mono text-xs text-text-tertiary">
-        awaf v1.3
+        awaf v1.4
         <span class="dot-sep mx-2">·</span>
         Apache 2.0
         <span class="dot-sep mx-2">·</span>
