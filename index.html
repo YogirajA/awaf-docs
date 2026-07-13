@@ -7,14 +7,15 @@
   <meta name="description" content="An open specification for production-ready AI agent architecture. 10 pillars, scored 0–100, with readiness ratings." />
   <link rel="canonical" href="https://awaf.ai" />
 
-  <!-- Restore the saved theme before first paint so there is no flash. -->
+  <!-- Apply the theme before first paint so there is no flash. Plum is the default;
+       Terminal shows only when the visitor has explicitly chosen it. -->
   <script>
     (function () {
+      var theme = 'plum';
       try {
-        if (localStorage.getItem('awaf-theme') === 'plum') {
-          document.documentElement.setAttribute('data-theme', 'plum');
-        }
+        if (localStorage.getItem('awaf-theme') === 'terminal') theme = 'terminal';
       } catch (e) {}
+      if (theme === 'plum') document.documentElement.setAttribute('data-theme', 'plum');
     })();
   </script>
 
