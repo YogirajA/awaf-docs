@@ -245,28 +245,49 @@
     .rb-nearready { color: var(--rb-nearready); border-color: color-mix(in srgb, var(--rb-nearready) 45%, transparent); background: color-mix(in srgb, var(--rb-nearready) 15%, transparent); }
     .rb-ready     { color: var(--rb-ready);     border-color: color-mix(in srgb, var(--rb-ready) 45%, transparent);     background: color-mix(in srgb, var(--rb-ready) 15%, transparent); }
 
-    /* Theme toggle */
-    .theme-toggle {
+    /* Theme switch — segmented: both options shown, the active one highlighted,
+       each with a swatch previewing its palette so the alternate theme is discoverable. */
+    .theme-switch {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      padding: 5px 12px 5px 10px;
+      gap: 2px;
+      padding: 3px;
       border: 1px solid var(--border);
       border-radius: 999px;
+      background: var(--surface);
+    }
+    .ts-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      padding: 0 8px 0 6px;
+    }
+    .ts-opt {
+      display: inline-flex;
+      align-items: center;
+      border: 0;
       background: transparent;
-      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 4px 11px;
+      border-radius: 999px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
       letter-spacing: 0.04em;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
+      color: var(--text-tertiary);
+      transition: background 0.15s, color 0.15s;
     }
-    .theme-toggle:hover { border-color: var(--accent); color: var(--text-primary); }
-    .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .theme-toggle .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); flex-shrink: 0; }
-    .theme-toggle .t-plum { display: none; }
-    :root[data-theme="plum"] .theme-toggle .t-terminal { display: none; }
-    :root[data-theme="plum"] .theme-toggle .t-plum { display: inline; }
+    .ts-opt:hover { color: var(--text-primary); }
+    .ts-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .ts-sw { width: 9px; height: 9px; border-radius: 999px; margin-right: 6px; flex-shrink: 0; }
+    .ts-sw.terminal { background: #2dd4bf; }
+    .ts-sw.plum { background: linear-gradient(135deg, #3a2154, #c4407e 68%, #ef7d24); }
+    /* the active option reflects the current theme */
+    .ts-opt[data-theme-choice="terminal"] { color: var(--text-primary); background: color-mix(in srgb, var(--accent) 15%, transparent); }
+    :root[data-theme="plum"] .ts-opt[data-theme-choice="terminal"] { color: var(--text-tertiary); background: transparent; }
+    :root[data-theme="plum"] .ts-opt[data-theme-choice="plum"] { color: var(--text-primary); background: color-mix(in srgb, var(--accent) 15%, transparent); }
+    @media (max-width: 500px) { .ts-label { display: none; } }
 
     /* Radial hero glow */
     .hero-glow {
@@ -309,11 +330,15 @@
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <span class="wordmark text-text-primary text-base">awaf</span>
       <div class="flex items-center gap-4">
-        <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Switch color theme">
-          <span class="dot" aria-hidden="true"></span>
-          <span class="t-terminal">Terminal</span>
-          <span class="t-plum">Plum</span>
-        </button>
+        <div class="theme-switch" role="group" aria-label="Color theme">
+          <span class="ts-label">Theme</span>
+          <button type="button" class="ts-opt" data-theme-choice="terminal" onclick="setTheme('terminal')" aria-label="Terminal theme">
+            <span class="ts-sw terminal" aria-hidden="true"></span>Terminal
+          </button>
+          <button type="button" class="ts-opt" data-theme-choice="plum" onclick="setTheme('plum')" aria-label="Plum theme">
+            <span class="ts-sw plum" aria-hidden="true"></span>Plum
+          </button>
+        </div>
         <a href="https://github.com/YogirajA/awaf" target="_blank" rel="noopener"
          class="flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors text-sm">
         <svg viewBox="0 0 16 16" class="w-4 h-4 fill-current" aria-hidden="true">
@@ -986,15 +1011,14 @@ assert results.hallucination_rate &lt;= <span style="color:#2dd4bf;">0.03</span>
   </footer>
 
   <script>
-    function toggleTheme() {
+    function setTheme(name) {
       var root = document.documentElement;
-      var next = root.getAttribute('data-theme') === 'plum' ? 'terminal' : 'plum';
-      if (next === 'plum') {
+      if (name === 'plum') {
         root.setAttribute('data-theme', 'plum');
       } else {
         root.removeAttribute('data-theme');
       }
-      try { localStorage.setItem('awaf-theme', next); } catch (e) {}
+      try { localStorage.setItem('awaf-theme', name); } catch (e) {}
     }
 
     function copyPip(el) {
