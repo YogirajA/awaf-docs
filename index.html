@@ -897,6 +897,83 @@ assert results.hallucination_rate &lt;= <span style="color:#2dd4bf;">0.03</span>
     </div>
   </section>
 
+  <!-- ─── EXAMPLE ASSESSMENTS ─── -->
+  <section class="py-20 border-t border-border-subtle">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="mb-12 text-center">
+        <h2 class="headline text-3xl md:text-4xl text-text-primary mb-3" style="font-size: clamp(1.75rem, 4vw, 2.5rem);">
+          See a real assessment
+        </h2>
+        <p class="text-text-secondary">
+          Two agents that both run fine. AWAF scores them 83 points apart. Both ship with awaf-cli; reproduce either with <span class="font-mono text-accent">awaf run</span>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Good agent: 94 -->
+        <div class="eco-card">
+          <div class="flex items-center justify-between mb-4">
+            <div class="section-label text-text-tertiary">File Summarizer Agent · Python</div>
+            <span class="badge rb rb-ready">Production Ready</span>
+          </div>
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="headline" style="font-size: 3.25rem; line-height: 1; color: var(--rb-ready);">94</span>
+            <span class="text-text-tertiary text-sm">/ 100 · 4-run average · every pillar verified</span>
+          </div>
+          <p class="text-text-secondary text-sm leading-relaxed mb-4">
+            Kill switch, approval gate, session circuit breaker, budget hard stop, checkpoint/resume, and a 67-case eval suite. The two remaining High findings are real but do not affect safety:
+          </p>
+          <ul class="text-sm leading-relaxed text-text-secondary space-y-2 mb-2" style="font-family: var(--font-body);">
+            <li><span class="badge" style="color: var(--amber); border: 1px solid; border-color: color-mix(in srgb, var(--amber) 45%, transparent);">High</span> &nbsp;CloudWatch alarms are defined, but the metrics are not emitted yet.</li>
+            <li><span class="badge" style="color: var(--amber); border: 1px solid; border-color: color-mix(in srgb, var(--amber) 45%, transparent);">High</span> &nbsp;No context pruning before LLM calls.</li>
+          </ul>
+          <div class="mt-auto pt-4 flex items-center gap-4 text-xs">
+            <a href="https://github.com/YogirajA/awaf-cli/blob/main/examples/good-agent/AWAF_SCORE.md" target="_blank" rel="noopener" class="flex items-center gap-1 text-accent hover:opacity-70 transition-opacity">
+              <span>Full report</span>
+              <svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 13L13 3M13 3H7M13 3V9"/></svg>
+            </a>
+            <a href="https://github.com/YogirajA/awaf-cli/blob/main/examples/good-agent/agent.py" target="_blank" rel="noopener" class="flex items-center gap-1 text-text-tertiary hover:text-text-secondary transition-colors">
+              <span>Source</span>
+              <svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 13L13 3M13 3H7M13 3V9"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bad agent: 11 -->
+        <div class="eco-card">
+          <div class="flex items-center justify-between mb-4">
+            <div class="section-label text-text-tertiary">Q&amp;A Agent · Python</div>
+            <span class="badge rb rb-notready">Not Ready</span>
+          </div>
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="headline" style="font-size: 3.25rem; line-height: 1; color: var(--rb-notready);">11</span>
+            <span class="text-text-tertiary text-sm">/ 100 · Foundation failed</span>
+          </div>
+          <p class="text-text-secondary text-sm leading-relaxed mb-4">
+            It boots, calls the model, and returns answers, so a developer would call it functional. AWAF disagrees:
+          </p>
+          <ul class="text-sm leading-relaxed text-text-secondary space-y-2 mb-2" style="font-family: var(--font-body);">
+            <li><span class="badge rb rb-notready">Foundation</span> &nbsp;Depends on an external session-service, so it cannot run independently: one upstream failure takes it down.</li>
+            <li class="text-text-tertiary">When Foundation scores below 40, AWAF treats it as a structural block and stops scoring the other pillars.</li>
+          </ul>
+          <div class="mt-auto pt-4 flex items-center gap-4 text-xs">
+            <a href="https://github.com/YogirajA/awaf-cli/blob/main/examples/bad-agent/AWAF_SCORE.md" target="_blank" rel="noopener" class="flex items-center gap-1 text-accent hover:opacity-70 transition-opacity">
+              <span>Full report</span>
+              <svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 13L13 3M13 3H7M13 3V9"/></svg>
+            </a>
+            <a href="https://github.com/YogirajA/awaf-cli/blob/main/examples/bad-agent/agent.py" target="_blank" rel="noopener" class="flex items-center gap-1 text-text-tertiary hover:text-text-secondary transition-colors">
+              <span>Source</span>
+              <svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 13L13 3M13 3H7M13 3V9"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ─── ECOSYSTEM ─── -->
   <section class="py-20 border-t border-border-subtle">
     <div class="max-w-6xl mx-auto px-6">
