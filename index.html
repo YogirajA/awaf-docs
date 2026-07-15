@@ -974,6 +974,67 @@ assert results.hallucination_rate &lt;= <span style="color:#2dd4bf;">0.03</span>
     </div>
   </section>
 
+  <!-- ─── DESIGN FAQ ─── -->
+  <section class="py-20 border-t border-border-subtle">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="mb-12 text-center">
+        <h2 class="headline text-3xl md:text-4xl text-text-primary mb-3" style="font-size: clamp(1.75rem, 4vw, 2.5rem);">
+          Design decisions
+        </h2>
+        <p class="text-text-secondary">Why the reference implementation is built the way it is.</p>
+      </div>
+
+      <div class="eco-card">
+        <div class="section-label text-text-tertiary mb-3">Question</div>
+        <div class="text-text-primary font-bold mb-3" style="font-family: var(--font-body);">
+          Why not build awaf on CrewAI, LangChain, or DSPy?
+        </div>
+        <p class="text-text-secondary text-sm leading-relaxed mb-5">
+          Because an AWAF run is not an orchestration problem. Each of the 10 pillars is one
+          single-turn call: a fixed set of criteria plus shared evidence in, one scored JSON
+          verdict out. Pillars never talk to each other, hold no memory, and run no tool loop.
+          awaf-cli calls model providers directly (Anthropic, OpenAI, Azure, Google, and
+          <span class="font-mono text-accent">LiteLLM</span> as the catch-all), so an agent
+          framework would add weight without doing any work the run needs.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
+          <div>
+            <div class="font-mono text-accent text-sm mb-1">CrewAI</div>
+            <p class="text-text-secondary text-sm leading-relaxed">
+              Multi-agent role and task orchestration. AWAF's pillars are parallel and
+              single-turn, so there is no crew to coordinate.
+            </p>
+          </div>
+          <div>
+            <div class="font-mono text-accent text-sm mb-1">LangChain</div>
+            <p class="text-text-secondary text-sm leading-relaxed">
+              Glue for chains, tools, and memory. A pillar call is prompt to JSON, a few
+              lines on a provider SDK, so it would only be a second abstraction over calls
+              LiteLLM already unifies.
+            </p>
+          </div>
+          <div>
+            <div class="font-mono text-accent text-sm mb-1">DSPy</div>
+            <p class="text-text-secondary text-sm leading-relaxed">
+              Compiles and optimizes prompts. Here the prompts are the product: the pillar
+              criteria are hand-authored and gated by a nightly eval-grader, so they must
+              stay auditable and stable.
+            </p>
+          </div>
+        </div>
+
+        <p class="text-text-secondary text-sm leading-relaxed">
+          Frameworks are a subject of assessment, not a dependency. awaf reads LangGraph,
+          CrewAI, and AutoGen configs as evidence and grades them, so an app built on any of
+          them is assessed from its own files with nothing framework-specific to maintain.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ─── ECOSYSTEM ─── -->
   <section class="py-20 border-t border-border-subtle">
     <div class="max-w-6xl mx-auto px-6">
